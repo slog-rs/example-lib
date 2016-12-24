@@ -8,14 +8,14 @@ license = "MPL-2.0"
 documentation = "https://dpc.github.io/slog-rs/"
 homepage = "https://github.com/dpc/slog-rs"
 repository = "https://github.com/dpc/slog-rs"
-readme = "../../README.md"
+readme = "README.md"
 
 [lib]
 path = "lib.rs"
 
 [dependencies]
-slog = { version = "1", path = "../.." }
-slog-stdlog = { version = "1", path = "../stdlog" }
+slog = "1"
+slog-stdlog = "1"
 
 [dev-dependencies]
 env_logger = "0.3.5"
