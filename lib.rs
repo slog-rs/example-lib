@@ -10,7 +10,7 @@
 pub extern crate slog ;
 extern crate slog_stdlog;
 
-use slog::DrainExt;
+use slog::Drain;
 
 /// MyLib main struct
 pub struct MyLib {

@@ -5,11 +5,15 @@ extern crate slog_example_lib;
 extern crate slog_term;
 #[macro_use]
 extern crate slog;
+extern crate slog_async;
 
-use slog::DrainExt;
+use slog::Drain;
 
 fn main() {
-    let log = slog::Logger::root(slog_term::streamer().full().build().fuse(), o!("version" => env!("CARGO_PKG_VERSION")));
+    let decorator = slog_term::TermDecorator::new().build();
+    let drain = slog_term::FullFormat::new(decorator).build().fuse();
+    let drain = slog_async::Async::new(drain).build().fuse();
+    let log = slog::Logger::root(drain, o!("version" => "0.5"));
 
     let lib = slog_example_lib::MyLib::init(log);
     lib.do_the_thing();
