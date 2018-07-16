@@ -1,6 +1,6 @@
 [package]
 name = "slog-example-lib"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Dawid Ciężarkiewicz <dpc@dpc.pw>"]
 description = "Example of a library utilizing slog-rs"
 keywords = ["log", "logging", "structured", "hierarchical", "example"]
