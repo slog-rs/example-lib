@@ -29,7 +29,7 @@ impl MyLib {
     /// See http://xion.io/post/code/rust-optional-args.html
     pub fn init<L : Into<Option<slog::Logger>>>(logger : L) -> Self {
         MyLib {
-            logger: logger.into().unwrap_or(slog::Logger::root(slog_stdlog::StdLog.fuse(), o!())),
+            logger: logger.into().unwrap_or_else(|| slog::Logger::root(slog_stdlog::StdLog.fuse(), o!())),
         }
     }
 
